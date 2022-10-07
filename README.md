@@ -11,6 +11,7 @@
   - [x] Compositor: Picom (fork)
   
   ### Some preview images
+  - - - 
   
   ![Workflow](/preview/Workflow.png)
   ![Workflow](/preview/neofetch.png)
