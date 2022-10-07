@@ -1,0 +1,165 @@
+##---------- Keybindings for bspwm ----------##
+
+# Terminal
+ctrl + Return
+	alacritty
+
+#Browser
+ctrl + b
+    firefox
+#File Manager
+ctrl + e
+    thunar
+
+##---------- Dunst -----------##
+ctrl + space
+	dunstctl close
+
+ctrl + alt + space
+	dunstctl close-all
+
+ctrl + shift + space
+	dunstctl history-pop
+
+##---------- Rofi Launcher & Menus ----------##
+
+# Rofi App Launcher
+alt + space
+	rofi -modi drun -show drun -show-icons
+
+# Rofi Menus
+alt + Tab
+	rofi -show window -show-icons
+
+#Rofi Command Line
+alt + c
+    rofi -show run
+##---------- System ----------##
+
+# Power Button
+XF86PowerOff
+    eww open-many --toggle background-closer powermenu
+# Take a screenshot
+super + Print
+	spectacle -bc
+
+super + alt + s
+	spectacle -bcr
+
+# Brighness control
+XF86MonBrightnessUp
+	bash /home/icarus/.extras/changebrightness.sh up
+XF86MonBrightnessDown
+    bash /home/icarus/.extras/changebrightness.sh down
+# Volume control
+XF86AudioRaiseVolume
+	bash /home/icarus/.extras/changevolume.sh up
+
+XF86AudioLowerVolume
+    bash /home/icarus/.extras/changevolume.sh down
+
+XF86AudioMute
+	bash /home/icarus/.extras/changevolume.sh mute
+
+
+# Music control
+alt + l 
+     playerctl next
+alt + h
+     playerctl next
+
+XF86AudioPlay
+    playerctl play-pause
+
+##---------- Bspwm ----------##
+
+# Lockscreen
+ctrl + alt + l
+   betterlockscreen -l blur
+    
+# Reload Keybindings
+super + Escape
+	pkill -USR1 -x sxhkd
+
+# Quit/Restart bspwm
+super + alt + {q,r}
+	bspc {quit,wm -r}
+
+# Close App
+alt + Escape
+	bspc node -c
+
+# Kill
+super + alt + Escape
+    bspc quit
+
+# Fullscreen or Monocle
+super + Up
+	bspc desktop -l next
+
+# Toggle beetwen floating & tiled
+super + f
+    bspc node -t "~"{floating,tiled}
+
+# Pseudo Tiled & tiled mode
+super + {p,t}
+    bspc node -t {pseudo_tiled,tiled}
+
+# Set the node flags
+super + ctrl + {m,x,y,z}
+	bspc node -g {marked,locked,sticky,private}
+
+# Send the window to another edge of the screen
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Change focus to next window, including floating window
+alt + Tab
+	bspc node -f {next.local,prev.local}
+
+# Switch workspace
+ctrl + super + {Left,Right}
+	bspc desktop -f {prev.local,next.local}
+
+# Switch to last opened workspace
+super + {Tab,grave}
+	bspc {node,desktop} -f last
+
+# Send focused window to another workspace
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Minimize
+super + {_,shift + }{Down}
+    bspc {desktop -f,node -d} '^{11}'
+
+# Expanding windows
+super + shift + {h,l,j,k}
+	bspc node -z {left -20 0,right 20 0,top 0 -20,bottom 0 20}
+	
+# Shrinking windows
+super + shift  + {l,h,k,j}
+	bspc node -z {left 20 0,right -20 0,top 0 20,bottom 0 -20}
+	
+## Move floating windows
+alt + shift + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
+
+##---------- Missing Keys -----------###
+
+ctrl + shift + z
+	echo "<" | tr -d '\n' | xclip -selection clipboard
+
+ctrl + shift + x
+	echo ">" | tr -d '\n' | xclip -selection clipboard
+
+ctrl + shift + 1
+	echo "\`" | tr -d '\n' | xclip -selection clipboard
+
+ctrl + shift + 2
+	echo "~" | tr -d '\n' | xclip -selection clipboard
+
+##-------- Hide/Unhide Window--------###
+##---------- Misc -----------##
+
+##---------- EOF ----------##

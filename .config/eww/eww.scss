@@ -1,0 +1,19 @@
+/** Colors *******************************************/
+$bg: #0c1011;
+$bg-alt: #386544;
+$fg: #99bfc3;
+$fg-alt: #a9b1d6;
+$red: #db4b4b;
+$green: #9ece6a;
+$yellow: #e0af68;
+$orange: #ff9e64;
+$blue: #2d555b;
+$purple: #9d7cd8;
+$cyan: #7dcfff;
+$gray: #565f89;
+$gray-alt: #292E42;
+
+@import "./System-Menu/eww.scss";
+@import "./Player/eww.scss";
+@import "./Misc/eww.scss";
+@import "./Main/eww.scss";

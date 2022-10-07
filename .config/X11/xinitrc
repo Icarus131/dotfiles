@@ -1,0 +1,8 @@
+dunst &
+exec tlp true &
+sxhkd &
+mpd &
+mpDris2 &
+wal -R &
+exec bspwm
+
