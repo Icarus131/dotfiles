@@ -1,17 +1,17 @@
 /** Colors *******************************************/
-$bg: #0c1011;
-$bg-alt: #386544;
-$fg: #82786c;
-$fg-alt: #a9b1d6;
+$bg: #1f1919;
+$bg-alt: #3c3836;
+$fg: #ff524f;
+$fg-alt: #2a2220;
 $red: #db4b4b;
 $green: #9ece6a;
 $yellow: #e0af68;
 $orange: #ff9e64;
-$blue: #2e3c3d;
+$blue: #887d71;
 $purple: #9d7cd8;
 $cyan: #7dcfff;
 $gray: #565f89;
-$gray-alt: #292E42;
+$gray-alt: #292827;
 
 * {
   all: unset;
@@ -149,7 +149,6 @@ $gray-alt: #292E42;
   font-weight: bold;
 }
 
-
 .main-dnd-box-on {
   background-color: $blue;
   color: $bg;
@@ -177,7 +176,6 @@ $gray-alt: #292E42;
 .dnd-label-button {
   font-weight: bold;
 }
-
 
 .main-redshift-box-on {
   background-color: $blue;
@@ -245,7 +243,6 @@ $gray-alt: #292E42;
   background-color: $green;
   border-radius: 15px;
 }
-
 
 .brightness-slider {
   margin-left: 25px;
@@ -320,7 +317,7 @@ $gray-alt: #292E42;
 .menu-power {
   font-size: 18px;
   margin: 20px 0px 0px 0px;
-  background-color: $gray-alt;
+  background-color: #3c3836;
   border-radius: 100px;
   padding: 0px 11px 0px 11px;
 }

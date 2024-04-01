@@ -2,6 +2,7 @@
 (include "./Player/eww.yuck")
 (include "./Misc/eww.yuck")
 (include "./Main/eww.yuck")
+(defvar eww "/usr/bin/eww -c $HOME/.config/eww/")
 
 (defwidget closer []
     (eventbox :onclick "eww close-all && bash ~/.config/polybar/scripts/tray --kill"))

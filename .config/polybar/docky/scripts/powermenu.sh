@@ -8,14 +8,14 @@
 dir="~/.config/polybar/docky/scripts/rofi"
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme $dir/powermenu.rasi"
+rofi_command="rofi -show drun"
 
 # Options
-shutdown=" Shutdown"
-reboot=" Restart"
-lock=" Lock"
-suspend=" Sleep"
-logout=" Logout"
+shutdown="󰐥 Shutdown"
+reboot=" Restart"
+lock=" Lock"
+suspend="󰤄 Sleep"
+logout="󰍃 Logout"
 
 # Confirmation
 confirm_exit() {
@@ -23,12 +23,12 @@ confirm_exit() {
 		-i\
 		-no-fixed-num-lines\
 		-p "Are You Sure? : "\
-		-theme $dir/confirm.rasi
+		-theme ~/.config/rofi/config.rasi
 }
 
 # Message
 msg() {
-	rofi -theme "$dir/message.rasi" -e "Available Options  -  yes / y / no / n"
+	rofi -theme "~/.config/rofi/config.rasi" -e "Available Options  -  yes / y / no / n"
 }
 
 # Variable passed to rofi
@@ -58,7 +58,7 @@ case $chosen in
         ;;
     $lock)
 		if [[ -f /usr/bin/i3lock ]]; then
-			i3lock
+			 betterlockscreen -l blur
 		elif [[ -f /usr/bin/betterlockscreen ]]; then
 			betterlockscreen -l
 		fi

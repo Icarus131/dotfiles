@@ -5,7 +5,7 @@ ctrl + Return
 	alacritty
 
 #Browser
-ctrl + b
+ctrl + alt + b
     firefox
 #File Manager
 ctrl + e
@@ -40,8 +40,8 @@ alt + c
 XF86PowerOff
     eww open-many --toggle background-closer powermenu
 # Take a screenshot
-super + Print
-	spectacle -bc
+super + shift + s
+  flameshot gui
 
 super + alt + s
 	spectacle -bcr
@@ -94,7 +94,7 @@ super + alt + Escape
     bspc quit
 
 # Fullscreen or Monocle
-super + Up
+super + alt + Up
 	bspc desktop -l next
 
 # Toggle beetwen floating & tiled

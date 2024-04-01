@@ -11,8 +11,6 @@
 (defpoll calendar-day :interval "20h" "+%d")
 (defpoll calendar-year :interval "20h" "+%Y")
 (defpoll calendar-month :interval "20h" "%+B")
-(defpoll volume :interval "1s" "Main/scripts/system --vol")
-(defpoll brightness :interval "1s" "Main/scripts/system --bri")
 (defpoll cpu :interval "1s" "Main/scripts/system --cpu")
 (defpoll memory :interval "1s" "Main/scripts/system --mem")
 (defpoll profile-image :interval "10h" "Main/scripts/details --image")
@@ -30,7 +28,7 @@
 ;; widgets
 (defwidget main []
   (box :class "main-window" :space-evenly "false" :orientation "h"
-    (box :class "main-window-box" :orientation "h" :width 1150 :hexpand "false" :vexpand "false" :space-evenly "false"
+    (box :class "main-window-box" :orientation "h" :width 1150 :hexpand "true" :vexpand "false" :space-evenly "false"
       (box :class "left-stuff-box" :space-evenly "false" :orientation "v" :halign "start"
         (box :class "top-row" :orientation "h" :space-evenly "false"
           (box :class "date-box" :space-evenly "false" :orientation "v" :hexpand "false" :vexpand "false"

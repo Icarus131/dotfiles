@@ -1,28 +1,26 @@
 #! /bin/bash
 
+## Environtment
 export PATH="${PATH}:$HOME/.config/bspwm/bin"
-
 xrdb ~/.Xresources
-getcolors () {
-	FOREGROUND=$(xrdb -query | grep 'foreground:'| awk '{print $NF}')
-	BACKGROUND=$(xrdb -query | grep 'background:'| awk '{print $NF}')
-	BLACK=$(xrdb -query | grep 'color0:'| awk '{print $NF}')
-	RED=$(xrdb -query | grep 'color1:'| awk '{print $NF}')
-	GREEN=$(xrdb -query | grep 'color2:'| awk '{print $NF}')
-	YELLOW=$(xrdb -query | grep 'color3:'| awk '{print $NF}')
-	BLUE=$(xrdb -query | grep 'color4:'| awk '{print $NF}')
-	MAGENTA=$(xrdb -query | grep 'color5:'| awk '{print $NF}')
-	CYAN=$(xrdb -query | grep 'color6:'| awk '{print $NF}')
-	WHITE=$(xrdb -query | grep 'color7:'| awk '{print $NF}')
+getcolors() {
+	FOREGROUND=$(xrdb -query | grep 'foreground:' | awk '{print $NF}')
+	BACKGROUND=$(xrdb -query | grep 'background:' | awk '{print $NF}')
+	BLACK=$(xrdb -query | grep 'color0:' | awk '{print $NF}')
+	RED=$(xrdb -query | grep 'color1:' | awk '{print $NF}')
+	GREEN=$(xrdb -query | grep 'color2:' | awk '{print $NF}')
+	YELLOW=$(xrdb -query | grep 'color3:' | awk '{print $NF}')
+	BLUE=$(xrdb -query | grep 'color4:' | awk '{print $NF}')
+	MAGENTA=$(xrdb -query | grep 'color5:' | awk '{print $NF}')
+	CYAN=$(xrdb -query | grep 'color6:' | awk '{print $NF}')
+	WHITE=$(xrdb -query | grep 'color7:' | awk '{print $NF}')
 	PINK=$(echo "#00897b")
-    GRUV=$(echo "#31573c")
-    NAVY=$(echo "#051014")
+	GRUV=$(echo "#ac9f82")
+	NAVY=$(echo "#293b4c")
 }
 getcolors
 
-bspc monitor -d '1' '2' '3' '4' '5' '6' '7' '8' '9' '10'
-
-bspc config border_width 2
+bspc config border_width 1
 bspc config window_gap 10
 bspc config split_ratio 0.50
 
@@ -37,45 +35,31 @@ bspc config paddingless_monocle true
 bspc config single_monocle false
 bspc config focus_follows_pointer true
 
+# remove all rules first
 bspc rule -r *:*
 
-bspc rule -a Onboard state=floating follow=on focus=on
-bspc rule -a Audacious state=floating follow=on focus=on
-bspc rule -a Firefox:Places state=floating follow=on focus=on
-bspc rule -a Viewnior state=floating follow=on focus=on
-bspc rule -a Conky state=floating manage=off
-bspc rule -a stalonetray state=floating manage=off
-bspc rule -a Emacs state=tiled
+# special rules
+bspc monitor -d '1' '2' '3' '4' '5' '6' '7' '8' '9' '10'
 
+#bspc rule -a termite-float state=floating follow=on focus=on
+#bspc rule -a Pcmanfm state=floating follow=on focus=on
 
+## Autostart -------------------------------#
+
+# Kill if already running
 killall -9 sxhkd xsettingsd dunst xfce4-power-manager
-
+exec picom &
 dunst &
-
 sxhkd &
-
-ksuperkey -e 'Super_L=Alt_L+Spacebar' &
-ksuperkey -e 'Super_R=Alt_L+Spacebar' &
-
 xfce4-power-manager &
-
+xfsettingsd &
 xsetroot -cursor_name left_ptr &
-
 nitrogen --restore &
-
-# Java app problem
 wmname LG3D &
-
-exec picom --experimental-backends &
-bash /home/icarus/.config/polybar/launch.sh --docky &
-exec touchegg &
-exec tlp --start &
-sudo chmod 646 /sys/class/backlight/intel_backlight/brightness &
-exec  &
-exec polybar-msg cmd restart &
+bash /home/icarus/.config/polybar/launch.sh --cuts &
 eww daemon &
-exec betterlockscreen -u /home/icarus/Pictures/Wallpapers/473927-nature-stairs-forest.jpg&
-exec sct 3800 &
+exec betterlockscreen -u /home/icarus/Pictures/Wallpapers/soviet1.png &
+exec xss-lock -- betterlockscreen -l &
+exec flameshot &
+libinput-gestures-setup start &
 /usr/lib/polkit-1/polkit-agent-helper-1 &
-issue_tracker.sh
-

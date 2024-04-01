@@ -1,8 +1,8 @@
 /** Colors *******************************************/
-$bg: #0c1011;
-$bg-alt: #30553b;
-$fg: #6b645b;
-$fg-alt: #a9b1d6;
+$bg: #1f1919;
+$bg-alt: #3c3836;
+$fg: #ff524f;
+$fg-alt: #2a2220;
 $red: #db4b4b;
 $green: #9ece6a;
 $yellow: #e0af68;
@@ -11,17 +11,18 @@ $blue: #887d71;
 $purple: #9d7cd8;
 $cyan: #7dcfff;
 $gray: #565f89;
-$gray-alt: #292E42;
-
+$gray-alt: #292827;
 
 * {
   all: unset;
-  transition: 200ms linear;
+  transition: 200ms linear-gradient;
 }
 
 .main-window-box {
   background-color: $bg;
-  font-family: "Sofia Pro", "JetBrainsMono Nerd Font", "Material Design Icons Desktop";
+  font-family: "Sofia Pro", "JetBrainsMono Nerd Font",
+    "Material Design Icons Desktop";
+  min-height: 70rem;
 }
 
 .date-box {
@@ -89,7 +90,10 @@ $gray-alt: #292E42;
   color: $fg;
 }
 
-.volume-scale trough, .brightness-scale trough, .cpu-scale trough, .memory-scale trough {
+.volume-scale trough,
+.brightness-scale trough,
+.cpu-scale trough,
+.memory-scale trough {
   all: unset;
   background-color: $gray;
   min-height: 10px;

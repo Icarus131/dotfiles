@@ -1,17 +1,18 @@
 /** Colors *******************************************/
-$bg: #0c1011;
-$bg-alt: #3a6846;
-$fg: #38494a;
-$fg-alt: #a9b1d6;
+
+$bg: #1f1919;
+$bg-alt: #3c3836;
+$fg: #ff524f;
+$fg-alt: #2a2220;
 $red: #db4b4b;
 $green: #9ece6a;
 $yellow: #e0af68;
 $orange: #ff9e64;
-$blue: #2d555b;
+$blue: #887d71;
 $purple: #9d7cd8;
 $cyan: #7dcfff;
 $gray: #565f89;
-$gray-alt: #292E42;
+$gray-alt: #292827;
 
 * {
   all: unset;
@@ -32,7 +33,7 @@ $gray-alt: #292E42;
 }
 
 .main-buttons-box {
-  background-color: $fg;
+  background-color: $fg-alt;
   margin: 20px 20px 20px 20px;
   border-radius: 20px;
 }
@@ -57,7 +58,7 @@ $gray-alt: #292E42;
 
 .reboot:hover,
 .shutdown:hover,
-.exit:hover, 
+.exit:hover,
 .lock:hover {
   background-color: $bg-alt;
 }
@@ -83,7 +84,6 @@ $gray-alt: #292E42;
 .volume-spacer,
 .menu-spacer {
   transition: all 700ms cubic-bezier(0.1, -0, 0, 1.49);
-
 }
 
 .volume-window {
@@ -97,7 +97,6 @@ $gray-alt: #292E42;
   padding: 20px 0px 20px 0px;
 }
 
-
 .indicator-volume-slider {
   background-color: $gray;
   border-radius: 100px;
@@ -106,9 +105,9 @@ $gray-alt: #292E42;
 
 .indicator-volume-slider trough {
   border-radius: 100px;
-    slider {
-      background-color: transparent;
-    }
+  slider {
+    background-color: transparent;
+  }
 }
 
 .indicator-volume-slider highlight {
@@ -143,7 +142,6 @@ $gray-alt: #292E42;
 .brightness-spacer,
 .menu-spacer {
   transition: all 700ms cubic-bezier(0.1, -0, 0, 1.49);
-
 }
 
 .brightness-window {
@@ -158,9 +156,9 @@ $gray-alt: #292E42;
 
 .indicator-brightness-slider trough {
   border-radius: 100px;
-    slider {
-      background-color: transparent;
-    }
+  slider {
+    background-color: transparent;
+  }
 }
 
 .indicator-brightness-slider highlight {
